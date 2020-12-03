@@ -1,0 +1,27 @@
+server:
+ port: 8090
+ 
+spring:
+  datasource:
+    username: zyz
+    password: "!QAZ2wsx"
+    url: jdbc:mysql://rm-2ze6zmfoar7ni3mso3o.mysql.rds.aliyuncs.com:3306/springstudy?serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+ 
+mybatis:
+  mapper-locations: classpath:mybatis/*Mapper.xml
+  type-aliases-package: sppringBootStudy001.com.model
+ 
+bean001:
+ name: ZYZ
+ age: 5
+ lovers: 
+ subject:
+  - java
+  - c
+ 
+sayMe: "i am you"
+
+logging:
+ level:
+  sppringBootStudy001.com.dao: debug
