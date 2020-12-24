@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>sppringBootStudy</groupId>
     <artifactId>sppringBootStudy001</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>sppringBootStudy001 Maven Webapp</name>
     <url>http://maven.apache.org</url>
@@ -55,5 +55,11 @@
     </dependencies>
     <build>
         <finalName>sppringBootStudy001</finalName>
+        <plugins>
+          <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
     </build>
 </project>

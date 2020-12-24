@@ -23,7 +23,7 @@ public class UpdateMenoryServiceImpl implements UpdateMenoryService{
 		record.setMenory(60);
 		menoryMapper.updateByPrimaryKey(record);
 		
-		int i = 10/0;
+		//int i = 10/0;
 		
 		record.setId(0);
 		record.setName("张三");

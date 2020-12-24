@@ -8,15 +8,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import sppringBootStudy001.com.aop.TargetInstance;
-import sppringBootStudy001.com.model.Bean001;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringBootTest001 {
 	Logger logger = Logger.getLogger(SpringBootTest001.class);
 	
-	@Autowired
-	Bean001 bean001;
+	//@Autowired
+	//Bean001 bean001;
 	
 	@Autowired
 	TargetInstance targetInstance;
