@@ -24,7 +24,6 @@ public class SpringBootTest001 {
 //	public void testReadYaml() {
 //		
 //		logger.info(bean001.getSyame());
-
 //	}
 	
 	@Test
