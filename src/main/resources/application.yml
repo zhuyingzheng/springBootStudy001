@@ -25,3 +25,8 @@ sayMe: "i am you"
 logging:
  level:
   sppringBootStudy001.com.dao: debug
+  
+spring:
+ thymeleaf:
+  cache: false
+  mode: LEGACYHTMLS
