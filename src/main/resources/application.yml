@@ -2,6 +2,13 @@ server:
  port: 8091
  
 spring:
+  mvc: 
+   view: 
+    prefix: classpath:/templates/
+    suffix: .html
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
   datasource:
     username: zyz
     password: "!QAZ2wsx"
@@ -25,8 +32,3 @@ sayMe: "i am you"
 logging:
  level:
   sppringBootStudy001.com.dao: debug
-  
-spring:
- thymeleaf:
-  cache: false
-  mode: LEGACYHTMLS

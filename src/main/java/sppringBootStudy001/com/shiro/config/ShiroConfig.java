@@ -7,6 +7,7 @@ import org.apache.shiro.mgt.DefaultSecurityManager;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -22,7 +23,7 @@ public class ShiroConfig {
 	@Bean
 	public SecurityManager securityManager(Realm myRealm) {
 		DefaultSecurityManager defaultSecurityManager = 
-				new DefaultSecurityManager();
+				new DefaultWebSecurityManager();
 		defaultSecurityManager.setRealm(myRealm);
 		return defaultSecurityManager;
 	}
@@ -52,8 +53,8 @@ public class ShiroConfig {
 		filterChainMap.put("/login", "anon");//配置登录请求不需要认证
 		filterChainMap.put("/logout", "logout");//配置登出请求会清空当前用户的内存（释放session会话）
 		filterChainMap.put("/admin/**", "authc");//配置admin请求开头的登录需要登录认证
-		//配置剩余的请求都需要登录认证，这个必须写在最后
-		filterChainMap.put("/**", "authc");
+		//配置剩余的请求都需要登录认证，这个必须写在最后，可选的配置
+		//filterChainMap.put("/**", "authc");
 		
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainMap);
 		return shiroFilterFactoryBean;
