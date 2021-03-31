@@ -13,6 +13,10 @@ import org.springframework.context.annotation.Configuration;
 
 import sppringBootStudy001.com.shiro.realm.MyRealm;
 
+/**
+ * @author zhuyingzheng
+ * 标注这是shiro的配置类，用于模拟spring的配置文件，在这里配置shiro
+ */
 @Configuration
 public class ShiroConfig {
 	
@@ -24,10 +28,15 @@ public class ShiroConfig {
 	public SecurityManager securityManager(Realm myRealm) {
 		DefaultSecurityManager defaultSecurityManager = 
 				new DefaultWebSecurityManager();
+		//设置一个realm，这个realm是最终帮我们完成认证和授权的具体对象
 		defaultSecurityManager.setRealm(myRealm);
 		return defaultSecurityManager;
 	}
 	
+	/**
+	 * @return
+	 * 自定义一个bean，最终使用这个bean返回的对象来完成我们的认证
+	 */
 	@Bean
 	public MyRealm myRealm() {
 		MyRealm myRealm = new MyRealm();
