@@ -22,7 +22,8 @@ public class MainApplication {
 	public Redisson redisson() {
 		//redis为单机模式
 		Config config = new Config();
-		config.useSingleServer().setAddress("redis://192.168.2.100:6379").setDatabase(0);
+		config.useSingleServer().setAddress("redis://39.107.56.25:16379").setDatabase(0);
+		config.useSingleServer().setPassword("!QAZ2wsx");
 		return (Redisson)Redisson.create(config);
 	}
 }
