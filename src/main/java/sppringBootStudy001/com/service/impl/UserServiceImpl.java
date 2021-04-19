@@ -15,12 +15,14 @@ import sppringBootStudy001.com.service.UserService;
 @Service
 public class UserServiceImpl implements UserService{
 
-	@SuppressWarnings("serial")
-	public static final Map<String,String> userMap = new HashMap<String,String>(){
-		{
-			put("zhangsan", "123456");
-		}
-	};
+	private static final Map<String,String> userMap = new HashMap<String,String>();
+	
+	/**
+	 * 
+	 */
+	public UserServiceImpl() {
+		userMap.put("zhangsan", "123456");	
+	}
 	
 	/**
 	 *
