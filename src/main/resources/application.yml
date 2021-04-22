@@ -14,10 +14,10 @@ spring:
     password: "!QAZ2wsx"
     url: jdbc:mysql://rm-2ze6zmfoar7ni3mso3o.mysql.rds.aliyuncs.com:3306/springstudy?serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
-  redis:  
-    host: 39.107.56.25
-    port: 16379
-    password: "!QAZ2wsx"
+#  redis:
+#    host: 39.107.56.25
+#    port: 16379
+#    password: "!QAZ2wsx"
  
 mybatis:
   mapper-locations: classpath:mybatis/*Mapper.xml

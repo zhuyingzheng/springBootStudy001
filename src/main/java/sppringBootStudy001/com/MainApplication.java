@@ -18,12 +18,12 @@ public class MainApplication {
 		SpringApplication.run(MainApplication.class, args);
 	}
 	
-	@Bean
-	public Redisson redisson() {
-		//redis为单机模式
-		Config config = new Config();
-		config.useSingleServer().setAddress("redis://39.107.56.25:16379").setDatabase(0);
-		config.useSingleServer().setPassword("!QAZ2wsx");
-		return (Redisson)Redisson.create(config);
-	}
+//	@Bean
+//	public Redisson redisson() {
+//		//redis为单机模式
+//		Config config = new Config();
+//		config.useSingleServer().setAddress("redis://39.107.56.25:16379").setDatabase(0);
+//		config.useSingleServer().setPassword("!QAZ2wsx");
+//		return (Redisson)Redisson.create(config);
+//	}
 }

@@ -1,7 +1,12 @@
 package sppringBootStudy001.com.controller;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,14 +21,37 @@ public class ShtiroTestController {
 	
 	@Autowired
 	private UserService userService;
-	
-	@RequestMapping("/")
+
+
+	@RequestMapping("/index")
+	@ResponseBody
 	public String index() {
+		return "index";
+	}
+
+	@RequestMapping("/")
+	public String root() {
 		return "login";
 	}
 	
 	@RequestMapping("/login")
-	public String login() {
+	public String login(String username, String password, Model model) {
+		//获取权限操作对象，利用这个对象来完成登录操作
+		Subject subject = SecurityUtils.getSubject();
+		//是否认证过
+		if(!subject.isAuthenticated()){
+			//创建用户身份认证令牌，并设置成页面中的登录是传递的值
+			UsernamePasswordToken usernameAndPasswordToken =
+					new UsernamePasswordToken(username, password);
+			try {
+				//用户登录
+				subject.login(usernameAndPasswordToken);
+			}catch (AuthenticationException e){
+				e.printStackTrace();
+				model.addAttribute("errorMessage","认证失败");
+				return "login";
+			}
+		}
 		return "redirect:/succes"; //重定向到success
 	}
 	
