@@ -1,12 +1,11 @@
 package sppringBootStudy001.com.service.impl;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-
 import sppringBootStudy001.com.service.UserService;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Administrator
@@ -21,7 +20,8 @@ public class UserServiceImpl implements UserService{
 	 * 
 	 */
 	public UserServiceImpl() {
-		userMap.put("zhangsan", "123456");	
+		userMap.put("admin", "admin");
+		userMap.put("zhangsan", "123");
 	}
 	
 	/**
@@ -29,7 +29,15 @@ public class UserServiceImpl implements UserService{
 	 */
 	@Override
 	public boolean checkUser(String name) {
-		return StringUtils.isEmpty(userMap.get(name))?false:true;
+		return !StringUtils.isEmpty(userMap.get(name));
+	}
+
+	/**
+	 *
+	 */
+	@Override
+	public String getPwdByName(String name) {
+		return userMap.get(name);
 	}
 
 }

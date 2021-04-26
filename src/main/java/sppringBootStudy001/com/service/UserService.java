@@ -7,9 +7,13 @@ package sppringBootStudy001.com.service;
 public interface UserService {
 	
 	/**
-	 * @param name
-	 * @return
+	 * @return true or false
 	 */
-	public boolean checkUser(String name);
+	boolean checkUser(String name);
+
+	/**
+	 * @return pwd
+	 */
+	String getPwdByName(String name);
 	
 }

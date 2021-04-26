@@ -4,13 +4,10 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import sppringBootStudy001.com.service.UserService;
 
 /**
  * shiro测试控制器
@@ -18,14 +15,10 @@ import sppringBootStudy001.com.service.UserService;
  */
 @Controller
 public class ShtiroTestController {
-	
-	@Autowired
-	private UserService userService;
-
 
 	@RequestMapping("/index")
 	@ResponseBody
-	public String index() {
+	public String  index() {
 		return "index";
 	}
 
