@@ -25,6 +25,9 @@ public class HelloController {
 	
 //	@Autowired
 //	private Redisson redisson;
+
+
+
 	
 	@RequestMapping("/hello")
 	@ResponseBody
