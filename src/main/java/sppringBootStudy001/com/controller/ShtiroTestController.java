@@ -1,7 +1,8 @@
 package sppringBootStudy001.com.controller;
 
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
@@ -39,9 +40,11 @@ public class ShtiroTestController {
 			try {
 				//用户登录
 				subject.login(usernameAndPasswordToken);
-			}catch (AuthenticationException e){
-				e.printStackTrace();
-				model.addAttribute("errorMessage","认证失败");
+			}catch (UnknownAccountException e){
+				model.addAttribute("errorMessage","未注册用户");
+				return "login";
+			}catch (IncorrectCredentialsException e){
+				model.addAttribute("errorMessage","密码验证错误");
 				return "login";
 			}
 		}

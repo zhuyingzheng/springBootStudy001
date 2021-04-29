@@ -28,7 +28,11 @@ public class AuthRealm  extends AuthenticatingRealm {
         //String password = new String(token.getPassword());
         boolean authFlag = userService.checkUser(userName);
         System.out.println("认证结果：" + authFlag);
-        /* 用户不存在，抛出异常 */
+        /* --------------------------------
+        * |用户不存在，抛出异常               |
+        * |可根据不同的情况抛出不同的异常       |
+        * =================================
+        * */
         if(!authFlag){
             throw new UnknownAccountException();
         }
